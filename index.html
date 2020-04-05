@@ -1,41 +1,66 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title></title>
-    <meta content="">
-    <style></style>
-  <script src="https://cdn.rawgit.com/naptha/tesseract.js/0.2.0/dist/tesseract.js"></script>
-  <script type="text/javascript" src = ""></script>
-  </head>
-  <body>
+<head>
+	<title>Text Cropper</title>
+</head>
+<style type="text/css">
+#div {
+border: 1px dotted #000;
+position: absolute;
+}
+</style>
+<body>
+<div id="div" hidden></div>
+<header>
+	<h1>Reading Data from XML Files</h1>
+</header>
+<main>
+	<ul id="words"></ul>
+	<pre id="output"></pre>
+</main>  
+<h2>Create a text box around the below image</h2>
+<img src="./image.png" alt="">
+<h3 id = "results"></h3>
+</body>
+<script type="text/javascript" src = "select.js"></script>
+<script>
+	//XMLHttpRequest() - has responseXML property in the response
+	
+	document.addEventListener('DOMContentLoaded', ()=>{
+		//fetch the data as soon as the page has loaded
+		createXML()
+		makeRectangle(createXML);
+		function createXML(){
+		let url = "test.xml";
+		fetch(url)
+		.then(response=>response.text())
+		.then(data=>{
+			//console.log(data);  //string
+			let parser = new DOMParser();
+			let xml = parser.parseFromString(data, "application/xml");
+			document.getElementById('output').textContent = data;
+			// console.log(xml);
+			// buildHouseList(xml);
+			let list = document.getElementById('words');
+			let words = xml.getElementsByTagName('WORD');
+			for(let i=0; i<words.length; i++){
+			let li = document.getElementById('results');
+			let wordName = words[i].firstChild.nodeValue;
+			let Coordinates = words[i].getAttribute('coords').split(',').map(function(item) {
+				return parseInt(item, 10)
+			});
+			if(Coordinates[0]>results['x1'] && Coordinates[1]< results['y1'] && Coordinates[2]<results['x2'] && Coordinates[3] > results['y2']){
+				console.log(wordName)
+				li.textContent += `${wordName}` + " ";
+				// list.innerHTML += `${wordName}` + " "
+			}
+			
+			// console.log(Coordinates);
+			}
+		});
+	}
+});
 
-    <input type="text" id="url" placeholder="Image URL" value = "https://images-na.ssl-images-amazon.com/images/I/91QDpg7q7tL._SL1500_.jpg"/>
-    <input type="button" id="go_button" value="Run" />
-        <img id = "img" src="" style = "float:right"><br>
-    
-    <div id="ocr_results"> </div><br>
-     <div id="ocr_status"> </div>
-    <div id="ocr_status"> </div>
-  </body>
-  <script type="text/javascript">
-
-    function runOCR(url) {
-        Tesseract.recognize(url)
-             .then(function(result) {
-                document.getElementById("ocr_results")
-                        .innerText = result.text;
-             }).progress(function(result) {
-                document.getElementById("ocr_status")
-                        .innerText = result["status"] + " (" +
-                            (result["progress"] * 100) + "%)";
-            });
-    } 
-
-document.getElementById("go_button")
-        .addEventListener("click", function(e) {
-            document.getElementById('img').src = document.getElementById("url").value;
-            document.getElementById('img').width = "300"
-            var url = document.getElementById("url").value;
-            runOCR(url);
-        });
-  </script>
+</script>
+	
 </html>
