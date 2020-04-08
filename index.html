@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Text Cropper</title>
+<title>Text Cropper</title>
 </head>
 <style type="text/css">
 #div {
@@ -15,52 +15,16 @@ position: absolute;
 	<h1>Reading Data from XML Files</h1>
 </header>
 <main>
-	<ul id="words"></ul>
 	<pre id="output"></pre>
 </main>  
 <h2>Create a text box around the below image</h2>
 <img src="./image.png" alt="">
 <h3 id = "results"></h3>
 </body>
+<!-- Script for creating rectangular region on the page -->
 <script type="text/javascript" src = "select.js"></script>
-<script>
-	//XMLHttpRequest() - has responseXML property in the response
-	
-	document.addEventListener('DOMContentLoaded', ()=>{
-		//fetch the data as soon as the page has loaded
-		createXML()
-		makeRectangle(createXML);
-		function createXML(){
-		let url = "test.xml";
-		fetch(url)
-		.then(response=>response.text())
-		.then(data=>{
-			//console.log(data);  //string
-			let parser = new DOMParser();
-			let xml = parser.parseFromString(data, "application/xml");
-			document.getElementById('output').textContent = data;
-			// console.log(xml);
-			// buildHouseList(xml);
-			let list = document.getElementById('words');
-			let words = xml.getElementsByTagName('WORD');
-			for(let i=0; i<words.length; i++){
-			let li = document.getElementById('results');
-			let wordName = words[i].firstChild.nodeValue;
-			let Coordinates = words[i].getAttribute('coords').split(',').map(function(item) {
-				return parseInt(item, 10)
-			});
-			if(Coordinates[0]>results['x1'] && Coordinates[1]< results['y1'] && Coordinates[2]<results['x2'] && Coordinates[3] > results['y2']){
-				console.log(wordName)
-				li.textContent += `${wordName}` + " ";
-				// list.innerHTML += `${wordName}` + " "
-			}
-			
-			// console.log(Coordinates);
-			}
-		});
-	}
-});
+<!-- Script for fetching XML file  -->
+<script type="text/javascript" src = "fetchXML.js"></script>
 
-</script>
 	
 </html>
