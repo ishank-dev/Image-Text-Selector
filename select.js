@@ -1,29 +1,30 @@
 var div = document.getElementById('div');
-var x1 = 0, y1 = 0, x2 = 0, y2 = 0,x3 =  0,x4 = 0,y3 = 0,y4 = 0;
-results = {'x1' : '', 'y1' : '', 'x2' : '', 'y2': ''}
+var x1 = 0, y1 = 0, x2 = 0, y2 = 0,l =  0,r = 0,b = 0,t = 0;
+results = {'l' : '', 'b' : '', 'r' : '', 't': ''}
 function makeRectangle(createXML){
 
+// function to make the selected box visible by styling it.
 function reCalc() {
-    x3 = Math.min(x1,x2);
-    x4 = Math.max(x1,x2);
-    y3 = Math.min(y1,y2);
-    y4 = Math.max(y1,y2);
-    div.style.left = x3 + 'px';
-    div.style.top = y3 + 'px';
-    div.style.width = x4 - x3 + 'px';
-    div.style.height = y4 - y3 + 'px';
+    l = Math.min(x1,x2);
+    r = Math.max(x1,x2);
+    b = Math.min(y1,y2);
+    t = Math.max(y1,y2);
+    div.style.left = l + 'px';
+    div.style.top = b + 'px';
+    div.style.width = r - l + 'px';
+    div.style.height = t - b + 'px';
 }
+// function to calculate final coordinates, this function is called after the mouseup event
 function reCalc2() {
-     x3 = Math.min(x1,x2);
-     x4 = Math.max(x1,x2);
-     y3 = Math.min(y1,y2);
-     y4 = Math.max(y1,y2);
-    // alert(x3+" "+y4+" "+" "+x4+" "+y3)
-    results = {'x1' : x3, 'y1' : y4, 'x2' : x4, 'y2': y3}
-
-    // console.log(results) // Coordinates in xml are as follows, (bottom-left) and (top-right)
+     l = Math.min(x1,x2);
+     r = Math.max(x1,x2);
+     b = Math.max(y1,y2);
+     t = Math.min(y1,y2);
+    results = {'x1' : l, 'y1' : b, 'x2' : r, 'y2': t} 
+    // call the xml function as soon as mouseup event occurs
     createXML();
 }
+// function for taking initial coordinates.
 onmousedown = function(e) {
     div.hidden = 0;
     x1 = e.clientX;
@@ -31,12 +32,14 @@ onmousedown = function(e) {
     reCalc();
 
 };
+// mouse move event
 onmousemove = function(e) {
     x2 = e.clientX;
     y2 = e.clientY;
     reCalc();
 
 };
+// mouse up event
 onmouseup = function(e) {
     div.hidden = 1;
     x2 = e.clientX;
