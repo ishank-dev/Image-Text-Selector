@@ -1,0 +1,61 @@
+customer_id,name,gender,age,annual income (lakhs),spending score,items purchased (monthly),country,category,purchase type 
+1,Edith,Female,,40.9,27,62,Iran,Baby,offline
+2,Sinclair,Male,53,,42,47,China,,online
+3,Enoch,Male,22,,70,26,China,Computers,offline
+4,Lorenzo,Male,9,18.5,68,80,Russia,,online
+5,Damian,Male,55,18.4,69,89,Philippines,Jewelery,offline
+6,Drona,Female,52,54.8,35,98,Indonesia,Music,offline
+7,Sylvester,Male,19,21.4,52,1,China,,online
+8,Olag,Male,23,58.2,47,19,Portugal,Beauty,online
+9,Timothee,Male,0,44,23,65,Uzbekistan,Electronics,offline
+10,Velvet,,3,35.4,40,31,Russia,Games,offline
+11,Jerrold,Male,8,40.6,15,3,China,Outdoors,offline
+12,Tulley,Male,54,51,8,94,Russia,Toys,offline
+13,Myca,,10,22.5,70,11,Indonesia,Electronics,online
+14,Westbrook,Male,,32.2,78,25,United States,Outdoors,offline
+15,Hurlee,Male,33,,51,56,Brazil,Music,online
+16,Maggy,Female,58,36,2,14,Philippines,Toys,online
+17,Jerald,Male,59,26.4,92,13,China,Clothing,online
+18,Lyman,Male,34,17.2,5,19,United States,Shoes,online
+19,Jennee,Female,42,60,35,58,Tanzania,Books,offline
+20,Petronilla,,57,54.1,27,75,Uganda,Books,offline
+21,Drake,,21,37.1,22,68,Iran,Computers,offline
+22,Cullin,Male,12,26,96,50,China,Automotive,offline
+23,Valaria,Female,15,,82,84,Philippines,Jewelery,online
+24,Jard,Male,5,48.4,39,60,Slovenia,Health,online
+25,Joni,,40,23.9,24,4,China,Clothing,online
+26,Ad,Male,4,14.4,29,58,Indonesia,Automotive,offline
+27,Sacha,Female,46,11.2,57,26,Philippines,Home,offline
+28,Nessa,Female,55,37.6,100,87,Russia,Baby,online
+29,Brant,Male,35,53.7,59,42,United States,,offline
+30,Edita,,20,45.5,92,76,Russia,Electronics,offline
+31,Kelby,Male,56,50.1,74,98,Ukraine,,offline
+32,Legra,Female,47,55.2,48,28,Poland,,online
+33,Spencer,Male,57,18.9,15,51,Brazil,Grocery,offline
+34,Olivette,Female,,19,57,23,Indonesia,Kids,online
+35,Rainer,Male,25,,63,94,China,Outdoors,online
+36,Gretna,Female,16,55.2,29,34,Ukraine,Shoes,online
+37,Aloysius,Male,1,36.2,28,74,China,Music,online
+38,Darrell,Male,15,31,49,96,Czech Republic,Baby,online
+39,Manfred,Male,11,31.5,43,34,Nicaragua,Music,online
+40,Tam,Male,15,,65,61,Philippines,,online
+41,Beatrisa,,51,26.6,4,81,China,Beauty,online
+42,Shara,,4,24.1,11,3,Indonesia,Games,online
+43,Brock,Male,31,15.6,17,54,Indonesia,Grocery,online
+44,Felice,Male,33,,41,90,China,,online
+45,Ned,Male,39,15.5,4,64,France,,offline
+46,Cathrine,Female,25,52,73,39,Reunion,Garden,online
+47,Dolorita,Female,41,57.5,44,6,China,Computers,offline
+48,Leonanie,Female,46,41.6,12,97,Brazil,Games,offline
+49,Melinda,Female,46,52.8,29,100,Indonesia,,offline
+50,Andonis,Male,19,30.9,32,59,Maldives,Grocery,offline
+51,Iorgos,Male,7,20.2,85,90,Philippines,,online
+52,Sinclare,Male,38,53.8,61,70,Indonesia,,online
+53,Koressa,Female,36,34.9,79,4,Japan,Beauty,offline
+54,Ermentrude,,30,,75,63,Greece,Games,offline
+55,Tiebout,Male,,31.8,22,63,Kosovo,Outdoors,offline
+56,Annamarie,,36,42.3,54,55,Poland,Beauty,offline
+57,Bari,Female,22,33.5,36,4,Ukraine,Movies,offline
+58,Hersch,Male,0,57.2,77,58,Chile,Electronics,offline
+59,Brocky,Male,,17.3,34,34,China,,online
+60,Erna,Female,56,16,44,12,France,Beauty,offline
